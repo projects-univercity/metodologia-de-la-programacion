@@ -17,9 +17,18 @@ namespace Practicas
         
         public void agregar(Comparable comparable)
         {
-            this.comparables.Add(comparable);
+        	this.apilar(comparable);
         }
         
+        public void apilar(Comparable comparable){
+        	this.comparables.Add(comparable);
+        }
+        
+        public Comparable desapilar(){
+        	Comparable comparable = this.comparables[this.comparables.Count -1];
+        	this.comparables.RemoveAt(this.comparables.Count -1);
+        	return comparable;
+        }
         
 
         public bool contiene(Comparable comparable){
