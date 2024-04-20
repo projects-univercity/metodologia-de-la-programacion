@@ -47,8 +47,20 @@ namespace Practicas
 	                            "--------------------------------");
 	        Console.BackgroundColor = ConsoleColor.Black;
 	        Coleccionable pilaAlumnos = new Pila();
-	        llenarPersonas(pilaAlumnos);
-	        informarPersonas(pilaAlumnos);
+	        llenarAlumnos(pilaAlumnos);
+	        informarAlumno(pilaAlumnos);
+	        
+	        bool has = true;
+	        while(has){
+	        	Comparable comparable = ((Pila)pilaAlumnos).desapilar();
+	        	if(comparable == null){
+	        		has = false;
+	        		break;
+	        	}
+	      
+	        	Console.WriteLine(((Alumno)comparable).getDni());
+	        	
+	        }
 	        
 	    }
 	    
@@ -94,12 +106,21 @@ namespace Practicas
 			
 		}
 	    
+	     public static void informarAlumno(Coleccionable coleccionable) {
+			
+			Console.WriteLine("Cuantos: " + coleccionable.cuantos());
+			
+			Console.WriteLine("Minimo: " + ((Alumno) coleccionable.minimo()));
+			Console.WriteLine("Maximo: " + ((Alumno) coleccionable.maximo()));
+			
+		}
+	    
 	    //Ejercicio 12
 	    public static void llenarPersonas(Coleccionable coleccionable) {
 
 			Comparable comparable;
 			for (int i = 0; i < 20; i++) {
-				comparable = new Persona(nombre(), new Random().Next(1, 99999999));
+				comparable = new Persona(nombresMock(i), new Random().Next(1, 99999999));
 				coleccionable.agregar(comparable);
 			}
 		}
@@ -108,13 +129,13 @@ namespace Practicas
 	    public static void llenarAlumnos(Coleccionable coleccionable) {
 			Comparable comparable;
 			for (int i = 0; i < 20; i++) {
-				comparable = new Alumno(nombre(), new Random().Next(0, 100), new Random().Next(1, 9999), new Random().Next(1, 10));
+				comparable = new Alumno(nombresMock(i), i*100000, new Random().Next(1, 9999), new Random().Next(1, 10));
 				coleccionable.agregar(comparable);
 			}
 		}
 		
 	    
-	    public static string nombre(){
+	    public static string nombresMock(int pos){
 			List<String> nombres = new List<string>();
 			nombres.Add("Juan");
 			nombres.Add("Raul");
@@ -139,7 +160,8 @@ namespace Practicas
 			nombres.Add("Mailen");
 			nombres.Add("Evelin");
 			nombres.Add("Laura");
-			return nombres[new Random().Next(0, 23)];
+			//return nombres[new Random().Next(0, 23)];
+			return nombres[pos];
 		}
 	}
 }
