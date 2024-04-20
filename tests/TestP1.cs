@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Practicas
 {
 	
-	public static class TP1
+	public static class TestP1
 	{
 	    public static void run(){
 	        //Ejercicio 7

@@ -18,7 +18,9 @@ namespace Practicas
 			
 			// TODO: Implement Functionality Here
 			
-			TP1.run();
+			//TestP1.run();
+		
+			TestP3.run();
 			
 			Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
