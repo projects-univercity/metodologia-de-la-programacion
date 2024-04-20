@@ -1,22 +1,26 @@
-﻿/*
- * Creado por SharpDevelop.
- * Usuario: osiri
- * Fecha: 20/4/2024
- * Hora: 05:28
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
- */
-using System;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Practicas.practica2
+namespace Practicas
 {
-	/// <summary>
-	/// Description of Conjunto.
-	/// </summary>
+	
 	public class Conjunto
 	{
+		
+		List<ClaveValor>elementos;
+		
 		public Conjunto()
 		{
+			this.elementos = new List<ClaveValor>();
 		}
+		
+		public void agregar(ClaveValor claveValor){
+			this.elementos.Add(claveValor);
+		}
+		
+		public bool pertenece(Comparable coparable){
+			return false;//*TODO*/
+		}
+		
 	}
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Practica1.Practica2
+namespace Practicas
 {
 	
 	public class StrategyComparacionDni: StrategyComparacion{

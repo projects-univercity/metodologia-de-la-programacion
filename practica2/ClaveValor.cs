@@ -8,15 +8,33 @@
  */
 using System;
 
-namespace Practicas.practica2
+namespace Practicas
 {
-	/// <summary>
-	/// Description of ClaveValor.
-	/// </summary>
+	
 	public class ClaveValor
 	{
-		public ClaveValor()
+		Comparable clave;
+		int valor;
+		
+		public ClaveValor(Comparable clave, int valor)
 		{
+			this.clave = clave;
+			this.valor = valor;
+		}
+		
+		public Comparable getClave(){
+			return this.clave;
+		}
+		public void setClave(Comparable clave){
+			this.clave = clave;
+		}
+		
+		public int getValor(){
+			return this.valor;
+		}
+		
+		public void setValor(int valor){
+			this.valor = valor;
 		}
 	}
 }

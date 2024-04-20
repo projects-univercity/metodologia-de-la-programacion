@@ -7,12 +7,22 @@ namespace Practicas
 		
 		private int legajo;
 		private double promedio;
+		private StrategyComparacion strategyComparacion;
 		
 		
 		public Alumno(String nombre, int dni, int legajo, double promedio): base(nombre, dni)
 		{
 			this.legajo = legajo;
 			this.promedio = promedio;
+			this.strategyComparacion = new StrategyComparacionDni();
+		}
+		
+		public StrategyComparacion getStrategyComparacion(){
+			return this.strategyComparacion;
+		}
+		
+		public void setStrategyComparacion(StrategyComparacion strategy){
+			this.strategyComparacion = strategy;
 		}
 		
 		// disable once ConvertToAutoProperty

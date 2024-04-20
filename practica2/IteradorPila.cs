@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Practica1;
 
-namespace Clase2.PIterator
+namespace Praticas
 {
     public class IteradorPila : Iterador
     {

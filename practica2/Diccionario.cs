@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Practica1.Practica2
+namespace Practicas
 {
 	
 	public class Diccionario: Coleccionable
