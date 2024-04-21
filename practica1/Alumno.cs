@@ -44,24 +44,26 @@ namespace Practicas
 		
 		public override bool sosIgual(Comparable comparable)
 		{
-			return ((Alumno)comparable).getDni() == this.dni;
+			return this.strategyComparacion.sosIgual(this, comparable);
 		}
 		
 		public override bool sosMenor(Comparable comparable)
 		{
-			return this.dni < ((Alumno)comparable).getDni();
+			return this.strategyComparacion.sosMenor(this, comparable);
 		}
 
 		
 		public override bool sosMayor(Comparable comparable)
 		{
-			return this.dni > ((Alumno)comparable).getDni();
+			return this.strategyComparacion.sosMayor(this, comparable);
 		}
 		
 		public override string ToString()
 		{
-			return base.ToString()  + string.Format(" Legajo={0}, Promedio={1}", legajo, promedio);
+			return string.Format("[Alumno Nombre={0}, Dni={1}, Legajo={2}, Promedio={3}, Strategy={4}]", 
+			                     base.getNombre(), base.getDni(), this.legajo, this.promedio, this.strategyComparacion);
 		}
+
 		
 		
 	}

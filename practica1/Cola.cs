@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Practicas
 {
 
-	public class Cola: Coleccionable
+	class Cola : Coleccionable
     {
 		List<Comparable>comparables = new List<Comparable>();
         
@@ -39,22 +39,16 @@ namespace Practicas
             return contiene;
         }
         
-        
-        
-        public Comparable minimo()
+       public Comparable minimo()
         {
             // disable once LocalVariableHidesMember
             Comparable minimo = null;
             if (comparables.Count > 0)
                 minimo = this.comparables[0];
-            //foreach (Comparable comparable in elementos)
-            //{
-            //    if (maximo.SosMayor(comparable))
-            //        maximo = comparable;
-            //}
+            
             for (int i = 0; i < this.comparables.Count; i++)
             {
-                if (minimo.sosMenor(comparables[i]))
+                if (comparables[i].sosMenor(minimo))
                     minimo = this.comparables[i];
             }
             return minimo;
@@ -66,24 +60,19 @@ namespace Practicas
             Comparable maximo = null;
             if (comparables.Count > 0)
                 maximo = comparables[0];
-            //foreach (Comparable comparable in elementos)
-            //{
-            //    if (maximo.SosMayor(comparable))
-            //        maximo = comparable;
-            //}
+            
             for (int i = 0; i < comparables.Count; i++)
             {
-                if (maximo.sosMayor(comparables[i]))
+                if (comparables[i].sosMayor(maximo))
                     maximo = comparables[i];
             }
             return maximo;
         }
-        
 
         
-
-        
-
-        
+		public Iterador CrearIterador()
+		{
+			return new IteradorConcreto(this.comparables);
+		}
     }
 }

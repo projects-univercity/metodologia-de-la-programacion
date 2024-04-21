@@ -39,6 +39,11 @@ namespace Practicas
             return this.valor > ((Numero)comparable).getValor();
         }
         
+		public override string ToString()
+		{
+			return string.Format("[Numero Valor={0}]", valor);
+		}
+
         
     }
 }

@@ -9,14 +9,19 @@ namespace Practicas
 		}
 		
 		#region StrategyComparacionNombre implementation
-		public bool sosMenor(Comparable thisComparable, Comparable comparable)
-		{
-			return ((Alumno)thisComparable).getNombre().CompareTo(((Alumno)comparable).getNombre()) == 0;
-		}
+		
 		public bool sosIgual(Comparable thisComparable, Comparable comparable)
 		{
-			return ((Alumno)thisComparable).getNombre() == ((Alumno)comparable).getNombre();
+			String thisName = ((Alumno)thisComparable).getNombre();
+			//String name = ((Alumno)comparable).getNombre();
+			return thisName.Equals("");
 		}
+		
+		public bool sosMenor(Comparable thisComparable, Comparable comparable)
+		{
+			return ((Alumno)thisComparable).getNombre().Length < ((Alumno)comparable).getNombre().Length;
+		}
+		
 		public bool sosMayor(Comparable thisComparable, Comparable comparable)
 		{
 			return ((Alumno)thisComparable).getNombre().Length > ((Alumno)comparable).getNombre().Length;

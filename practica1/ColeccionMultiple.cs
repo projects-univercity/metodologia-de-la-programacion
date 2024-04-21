@@ -3,7 +3,7 @@
 namespace Practicas
 {
 	
-	public class ColeccionMultiple: Coleccionable
+	public class ColeccionMultiple : Coleccionable
 	{
 		// disable once FieldCanBeMadeReadOnly.Local
 		Coleccionable pila;
@@ -65,5 +65,11 @@ namespace Practicas
 		}
 
 		#endregion
+		
+		
+		public Iterador CrearIterador()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

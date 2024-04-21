@@ -92,6 +92,16 @@ namespace Practicas
 			Console.WriteLine("Minimo: " + ((Persona) coleccionable.minimo()));
 			Console.WriteLine("Maximo: " + ((Persona) coleccionable.maximo()));
 			
+			
+			Comparable comparable = new Alumno("Pepe", 0, 0, 1*1.0 );
+			((Alumno)comparable).setStrategyComparacion(new StrategyComparacionNombre());
+			Boolean contiene = coleccionable.contiene(comparable);
+			if (contiene) {
+				Console.WriteLine("El elemento " + ((Alumno) comparable) + " esta en la coleccion");
+			} else {
+				Console.WriteLine("El elemento " + ((Alumno) comparable) + " NO esta en la coleccion");
+			}
+			
 		}
 	    
 	    //Ejercicio 12
@@ -99,7 +109,7 @@ namespace Practicas
 
 			Comparable comparable;
 			for (int i = 0; i < 20; i++) {
-				comparable = new Persona(nombre(), new Random().Next(1, 99999999));
+				comparable = new Persona(nombre(i), new Random().Next(1, 99999999));
 				coleccionable.agregar(comparable);
 			}
 		}
@@ -107,14 +117,17 @@ namespace Practicas
 	    //Ejercicio 16
 	    public static void llenarAlumnos(Coleccionable coleccionable) {
 			Comparable comparable;
+			
 			for (int i = 0; i < 20; i++) {
-				comparable = new Alumno(nombre(), new Random().Next(0, 100), new Random().Next(1, 9999), new Random().Next(1, 10));
+				//comparable = new Alumno(nombre(), new Random().Next(0, 100), new Random().Next(1, 9999), new Random().Next(1, 10));
+				comparable = new Alumno(nombre(i), i, i, i*1.0 );
+				((Alumno)comparable).setStrategyComparacion(new StrategyComparacionNombre());
 				coleccionable.agregar(comparable);
 			}
 		}
 		
 	    
-	    public static string nombre(){
+	    public static string nombre(int pos){
 			List<String> nombres = new List<string>();
 			nombres.Add("Juan");
 			nombres.Add("Raul");
@@ -123,7 +136,7 @@ namespace Practicas
 			nombres.Add("Miguel");
 			nombres.Add("David");
 			nombres.Add("Roberto");
-			nombres.Add("Manuel");
+			nombres.Add("Ana");
 			nombres.Add("Alejandro");
 			nombres.Add("Yesica");
 			nombres.Add("Ramon");
@@ -134,12 +147,9 @@ namespace Practicas
 			nombres.Add("Jazmin");
 			nombres.Add("Graciela");
 			nombres.Add("Gabriela");
-			nombres.Add("Micaela");
+			nombres.Add("Micaela Roldan");
 			nombres.Add("Juana");
-			nombres.Add("Mailen");
-			nombres.Add("Evelin");
-			nombres.Add("Laura");
-			return nombres[new Random().Next(0, 23)];
+			return nombres[pos];
 		}
 	}
 }

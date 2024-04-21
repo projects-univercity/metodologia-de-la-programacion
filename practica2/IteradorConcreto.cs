@@ -1,33 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Praticas
+namespace Practicas
 {
-    public class IteradorPila : Iterador
+    public class IteradorConcreto : Iterador
     {
-    	List<Comparable> lista;
+    	List<Comparable> list;
     	int posicionActual = 0;
         
         
-        public IteradorPila(Pila pila){
-    		lista = pila.getComparables();
+        public IteradorConcreto(Pila pila){
+    		list = pila.getComparables();
         }
         
-        public IteradorPila(/*List<Comparable> elementos*/){
-        	
+        public IteradorConcreto(List<Comparable> elementos){
+    		this.list = elementos;
         }
         
         public object Actual()
         {
-            return lista[posicionActual];
+            return list[posicionActual];
         }
 
         public bool Fin()
         {
-            return posicionActual >= lista.Count;
+            return posicionActual >= list.Count;
         }
 
         public void Primero()

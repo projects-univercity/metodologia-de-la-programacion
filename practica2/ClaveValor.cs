@@ -1,40 +1,38 @@
-﻿/*
- * Creado por SharpDevelop.
- * Usuario: osiri
- * Fecha: 20/4/2024
- * Hora: 05:36
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
- */
-using System;
+﻿using System;
 
 namespace Practicas
 {
 	
 	public class ClaveValor
 	{
-		Comparable clave;
-		int valor;
+		Numero clave;
+		Comparable valor;
 		
-		public ClaveValor(Comparable clave, int valor)
+		public ClaveValor(Numero clave, Comparable valor)
 		{
 			this.clave = clave;
 			this.valor = valor;
 		}
 		
-		public Comparable getClave(){
+		public Numero getClave(){
 			return this.clave;
 		}
-		public void setClave(Comparable clave){
+		public void setClave(Numero clave){
 			this.clave = clave;
 		}
 		
-		public int getValor(){
+		public Comparable getValor(){
 			return this.valor;
 		}
 		
-		public void setValor(int valor){
+		public void setValor(Comparable valor){
 			this.valor = valor;
 		}
+		
+		public override string ToString()
+		{
+			return string.Format("[ClaveValor Clave={0}, Valor={1}]", clave, valor);
+		}
+
 	}
 }

@@ -3,7 +3,7 @@
 namespace Practicas
 {
     
-	public interface Coleccionable
+	public interface Coleccionable : Iterable
     {
         int cuantos();
         

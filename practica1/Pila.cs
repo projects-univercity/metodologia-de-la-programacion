@@ -41,14 +41,10 @@ namespace Practicas
             Comparable maximo = null;
             if (this.comparables.Count > 0)
                 maximo = this.comparables[0];
-            //foreach (Comparable comparable in elementos)
-            //{
-            //    if (maximo.SosMayor(comparable))
-            //        maximo = comparable;
-            //}
-            for (int i = 0; i < this.comparables.Count; i++)
+          
+            for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (maximo.sosMayor(this.comparables[i]))
+                if (this.comparables[i].sosMayor(maximo))
                     maximo = this.comparables[i];
             }
             return maximo;
@@ -60,19 +56,19 @@ namespace Practicas
             Comparable minimo = null;
             if (this.comparables.Count > 0)
                 minimo = this.comparables[0];
-            //foreach (Comparable comparable in elementos)
-            //{
-            //    if (maximo.SosMayor(comparable))
-            //        maximo = comparable;
-            //}
-            for (int i = 0; i < this.comparables.Count; i++)
+            
+            for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (minimo.sosMenor(this.comparables[i]))
+                if (this.comparables[i].sosMenor(minimo))
                     minimo = this.comparables[i];
             }
             return minimo;
         }
         
         
+		public Iterador CrearIterador()
+		{
+			return new IteradorConcreto(this.comparables);
+		}
     }
 }
