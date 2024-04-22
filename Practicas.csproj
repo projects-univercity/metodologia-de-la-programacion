@@ -69,15 +69,26 @@
     <Compile Include="practica2\StrategyComparacionLegajo.cs" />
     <Compile Include="practica2\StrategyComparacionNombre.cs" />
     <Compile Include="practica2\StrategyComparacionPromedio.cs" />
+    <Compile Include="practica3\FabricaDeAlumnos.cs" />
+    <Compile Include="practica3\FabricaDeComparables.cs" />
+    <Compile Include="practica3\FabricaDeNumeros.cs" />
+    <Compile Include="practica3\FabricaDeProfesores.cs" />
+    <Compile Include="practica3\GeneradorDeDatos.cs" />
+    <Compile Include="practica3\LectorDeDatos.cs" />
+    <Compile Include="practica3\Observado.cs" />
+    <Compile Include="practica3\Observador.cs" />
+    <Compile Include="practica3\Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\TestP1.cs" />
     <Compile Include="tests\TestP2.cs" />
+    <Compile Include="tests\TestP3.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="practica3" />
     <Folder Include="practica2" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
