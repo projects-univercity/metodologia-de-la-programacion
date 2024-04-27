@@ -78,8 +78,8 @@
     <Compile Include="practica3\Observado.cs" />
     <Compile Include="practica3\Observador.cs" />
     <Compile Include="practica3\Profesor.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tests\Program.cs" />
     <Compile Include="tests\TestP1.cs" />
     <Compile Include="tests\TestP2.cs" />
     <Compile Include="tests\TestP3.cs" />
