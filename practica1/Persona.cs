@@ -50,7 +50,7 @@ namespace Practicas
         
 		public override string ToString()
 		{
-			return string.Format("[Persona Nombre={0}, Dni={1}]", nombre, dni);
+			return string.Format("[Nombre={0}, Dni={1}]", nombre, dni);
 		}
 
         

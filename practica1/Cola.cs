@@ -22,7 +22,20 @@ namespace Practicas
         
         public void agregar(Comparable comparable) {
             this.comparables.Add(comparable);
+            this.encolar(comparable);
         }
+
+		public void encolar(Comparable comparable){
+			this.comparables.Add(comparable);
+		}
+
+		public Comparable desencolar(){
+			if(this.comparables.Count == 0)
+				return null;
+			Comparable comparable = this.comparables[0];
+			comparables.RemoveAt(0);
+			return comparable;
+		}
 
         public bool contiene(Comparable comparable)
         {
@@ -41,14 +54,12 @@ namespace Practicas
         
        public Comparable minimo()
         {
-            // disable once LocalVariableHidesMember
-            Comparable minimo = null;
-            if (comparables.Count > 0)
-                minimo = this.comparables[0];
-            
-            for (int i = 0; i < this.comparables.Count; i++)
+            if(this.comparables.Count == 0) return null;
+
+           Comparable minimo = this.comparables[0];        
+            for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (comparables[i].sosMenor(minimo))
+            	if (!minimo.sosMenor(this.comparables[i]))
                     minimo = this.comparables[i];
             }
             return minimo;
@@ -56,15 +67,13 @@ namespace Practicas
         
         public Comparable maximo()
         {
-            // disable once LocalVariableHidesMember
-            Comparable maximo = null;
-            if (comparables.Count > 0)
-                maximo = comparables[0];
-            
-            for (int i = 0; i < comparables.Count; i++)
+            if(this.comparables.Count == 0)	return null;
+
+            Comparable maximo = this.comparables[0];
+            for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (comparables[i].sosMayor(maximo))
-                    maximo = comparables[i];
+            	if (!maximo.sosMayor(this.comparables[i]))
+                    maximo = this.comparables[i];
             }
             return maximo;
         }
