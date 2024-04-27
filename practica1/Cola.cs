@@ -21,8 +21,20 @@ namespace Practicas
         }
         
         public void agregar(Comparable comparable) {
-            this.comparables.Add(comparable);
+            this.encolar(comparable);
         }
+
+		public void encolar(Comparable comparable){
+			this.comparables.Add(comparable);
+		}
+
+		public Comparable desencolar(){
+			if(this.comparables.Count == 0)
+				return null;
+			Comparable comparable = this.comparables[0];
+			comparables.RemoveAt(0);
+			return comparable;
+		}
 
         public bool contiene(Comparable comparable)
         {

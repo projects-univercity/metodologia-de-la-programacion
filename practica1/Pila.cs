@@ -17,7 +17,20 @@ namespace Practicas
         
         public void agregar(Comparable comparable)
         {
-            this.comparables.Add(comparable);
+        	this.apilar(comparable);
+        }
+
+        public void apilar(Comparable comparable){
+        	this.comparables.Add(comparable);
+        }
+
+        public Comparable desapilar(){
+        	if(this.comparables.Count == 0){
+        		return null;
+        	}
+        	Comparable comparable = this.comparables[this.comparables.Count -1];
+        	this.comparables.RemoveAt(this.comparables.Count -1);
+        	return comparable;
         }
         
         
@@ -37,14 +50,12 @@ namespace Practicas
         }
 
         public Comparable maximo(){
-            // disable once LocalVariableHidesMember
-            Comparable maximo = null;
-            if (this.comparables.Count > 0)
-                maximo = this.comparables[0];
-          
+        	if(this.comparables.Count == 0)	return null;
+        	
+            Comparable maximo = this.comparables[0];
             for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (this.comparables[i].sosMayor(maximo))
+            	if (!maximo.sosMayor(this.comparables[i]))
                     maximo = this.comparables[i];
             }
             return maximo;
@@ -52,14 +63,12 @@ namespace Practicas
 
         public Comparable minimo()
         {
-            // disable once LocalVariableHidesMember
-            Comparable minimo = null;
-            if (this.comparables.Count > 0)
-                minimo = this.comparables[0];
-            
+           if(this.comparables.Count == 0) return null;
+           
+           Comparable minimo = this.comparables[0];        
             for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (this.comparables[i].sosMenor(minimo))
+            	if (!minimo.sosMenor(this.comparables[i]))
                     minimo = this.comparables[i];
             }
             return minimo;
