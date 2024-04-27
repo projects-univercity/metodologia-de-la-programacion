@@ -51,34 +51,29 @@ namespace Practicas
             return contiene;
         }
         
-       public Comparable minimo()
-        {
-            // disable once LocalVariableHidesMember
-            Comparable minimo = null;
-            if (comparables.Count > 0)
-                minimo = this.comparables[0];
-            
-            for (int i = 0; i < this.comparables.Count; i++)
+       public Comparable maximo(){
+        	if(this.comparables.Count == 0)	return null;
+        	
+            Comparable maximo = this.comparables[0];
+            for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (comparables[i].sosMenor(minimo))
+            	if (!maximo.sosMayor(this.comparables[i]))
+                    maximo = this.comparables[i];
+            }
+            return maximo;
+        }
+
+        public Comparable minimo()
+        {
+           if(this.comparables.Count == 0) return null;
+           
+           Comparable minimo = this.comparables[0];        
+            for (int i = 1; i < this.comparables.Count; i++)
+            {
+            	if (!minimo.sosMenor(this.comparables[i]))
                     minimo = this.comparables[i];
             }
             return minimo;
-        }
-        
-        public Comparable maximo()
-        {
-            // disable once LocalVariableHidesMember
-            Comparable maximo = null;
-            if (comparables.Count > 0)
-                maximo = comparables[0];
-            
-            for (int i = 0; i < comparables.Count; i++)
-            {
-                if (comparables[i].sosMayor(maximo))
-                    maximo = comparables[i];
-            }
-            return maximo;
         }
 
         
