@@ -49,10 +49,12 @@ namespace Practicas
         }
 
         public Comparable maximo(){
+        	if(this.comparables.Count == 0)	return null;
+        	
             Comparable maximo = this.comparables[0];
             for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (!maximo.sosMayor(this.comparables[i]))
+            	if (!maximo.sosMayor(this.comparables[i]))
                     maximo = this.comparables[i];
             }
             return maximo;
@@ -60,12 +62,12 @@ namespace Practicas
 
         public Comparable minimo()
         {
-        	if(this.comparables.Count == 0)
-        		return null;
-            Comparable minimo = this.comparables[0];        
+           if(this.comparables.Count == 0) return null;
+           
+           Comparable minimo = this.comparables[0];        
             for (int i = 1; i < this.comparables.Count; i++)
             {
-                if (!minimo.sosMenor(this.comparables[i]))
+            	if (!minimo.sosMenor(this.comparables[i]))
                     minimo = this.comparables[i];
             }
             return minimo;
