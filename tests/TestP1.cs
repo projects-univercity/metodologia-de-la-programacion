@@ -62,6 +62,36 @@ namespace Practicas
 			}
 		}
 	    
+	    /**
+	     * Informar con Patron Factory Method
+	    */
+	    public static void llenar(Coleccionable coleccionable, int option) {
+			
+			for (int i = 0; i < 20; i++) {
+				Comparable comparable = FabricaDeComparables.crearAleatorio(option);
+				coleccionable.agregar(comparable);
+			}
+		}
+	   
+	   /**
+	    * Informar con Patron Factory Method
+	    */
+	   public static void informar(Coleccionable coleccionable, int option) {
+			
+			Console.WriteLine("Cuantos: " + coleccionable.cuantos());
+			
+			Console.WriteLine("Minimo: " + ((Numero) coleccionable.minimo()).getValor());
+			Console.WriteLine("Maximo: " + ((Numero) coleccionable.maximo()).getValor());
+			
+			Comparable comparable = FabricaDeComparables.crearAleatorio(1);
+			Boolean contiene = coleccionable.contiene(comparable);
+			if (contiene) {
+				Console.WriteLine("El elemento " + comparable + " esta en la coleccion");
+			} else {
+				Console.WriteLine("El elemento " + comparable + " NO esta en la coleccion");
+			}
+		}
+	    
 	    
 	    
 	    //Ejercicio6

@@ -21,7 +21,7 @@ namespace Practicas
         }
         
         public void agregar(Comparable comparable) {
-            this.comparables.Add(comparable);
+            //this.comparables.Add(comparable);
             this.encolar(comparable);
         }
 

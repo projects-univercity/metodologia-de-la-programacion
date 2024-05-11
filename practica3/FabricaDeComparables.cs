@@ -7,14 +7,14 @@ namespace Practicas
         
 		public static Comparable crearAleatorio(int option)
 		{
-			FabricaDeComparables fabrica = this.switchFabrica();
+			FabricaDeComparables fabrica = switchFabrica(option);
             
 			return fabrica.crearAleatorio();
         }
 		
 		public static Comparable crearPorTeclado(int option)
 		{
-			FabricaDeComparables fabrica = this.switchFabrica();
+			FabricaDeComparables fabrica = switchFabrica(option);
             
 			return fabrica.crearPorTeclado();
         }
@@ -26,7 +26,7 @@ namespace Practicas
         
         
         
-        private FabricaDeComparables switchFabrica(int option){
+        private static FabricaDeComparables switchFabrica(int option){
         	FabricaDeComparables fabrica = null;
             
             switch(option)
@@ -39,6 +39,7 @@ namespace Practicas
                     break;
                 case 3:
                     fabrica = new FabricaDeProfesores();
+                    break;
             }
             return fabrica;
         }
