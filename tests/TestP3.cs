@@ -19,11 +19,16 @@ namespace Practicas
 
 			//Console.WriteLine(comparable);
 			
-			Console.WriteLine("******COLA DE NUMEROS CON FACTORY METHOD********");
-			Pila cola = new Pila();
-			TestP1.llenar(cola, 1);
-			TestP1.informar(cola, 1);
+			//Console.WriteLine("******COLA DE NUMEROS CON FACTORY METHOD********");
+			//Pila pila = new Pila();
+			//TestP1.llenar(pila, 1);
+			//TestP1.informar(pila, 1);
 			
+			
+			Console.WriteLine("******PILA DE PROFESORES CON FACTORY METHOD********");
+			Cola cola = new Cola();
+			TestP1.llenar(cola, 2);
+			TestP1.informar(cola, 2);
 			
 		}
 		

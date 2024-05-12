@@ -80,10 +80,10 @@ namespace Practicas
 			
 			Console.WriteLine("Cuantos: " + coleccionable.cuantos());
 			
-			Console.WriteLine("Minimo: " + ((Numero) coleccionable.minimo()).getValor());
-			Console.WriteLine("Maximo: " + ((Numero) coleccionable.maximo()).getValor());
+			Console.WriteLine("Minimo: " + coleccionable.minimo());
+			Console.WriteLine("Maximo: " + coleccionable.maximo());
 			
-			Comparable comparable = FabricaDeComparables.crearAleatorio(1);
+			Comparable comparable = FabricaDeComparables.crearAleatorio(option);
 			Boolean contiene = coleccionable.contiene(comparable);
 			if (contiene) {
 				Console.WriteLine("El elemento " + comparable + " esta en la coleccion");

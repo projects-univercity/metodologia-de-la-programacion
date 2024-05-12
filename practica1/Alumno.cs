@@ -9,7 +9,10 @@ namespace Practicas
 		private double promedio;
 		private StrategyComparacion strategyComparacion;
 		
-		public Alumno(){}
+		public Alumno()
+		{
+			this.strategyComparacion = new StrategyComparacionDni();
+		}
 		
 		public Alumno(String nombre, int dni, int legajo, double promedio): base(nombre, dni)
 		{
