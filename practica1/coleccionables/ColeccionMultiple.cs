@@ -33,7 +33,7 @@ namespace Practicas
 		public Comparable minimo()
 		{
 			Comparable comparable;
-			if(((Numero)pila.minimo()).getValor() < ((Numero)cola.minimo()).getValor()){
+			if(pila.minimo().sosMenor(cola.minimo())){
 				comparable = pila.minimo();
 			}
 			else{
@@ -45,7 +45,7 @@ namespace Practicas
 		public Comparable maximo()
 		{
 			Comparable comparable;
-			if(((Numero)pila.maximo()).getValor() > ((Numero)cola.maximo()).getValor()){
+			if(pila.maximo().sosMayor(cola.maximo())){
 				comparable = pila.maximo();
 			}
 			else{
@@ -53,10 +53,11 @@ namespace Practicas
 			}
 			return comparable;
 		}
-
+		
 		public void agregar(Comparable comparable)
 		{
-			throw new NotImplementedException();
+			this.cola.agregar(comparable);
+			this.pila.agregar(comparable);
 		}
 
 		public bool contiene(Comparable comparable)
@@ -69,7 +70,7 @@ namespace Practicas
 		
 		public Iterador CrearIterador()
 		{
-			throw new NotImplementedException();
+			return new IteradorConcreto(this.pila);
 		}
 	}
 }
