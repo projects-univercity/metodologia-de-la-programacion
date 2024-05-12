@@ -1,22 +1,40 @@
-﻿/*
- * Creado por SharpDevelop.
- * Usuario: osiri
- * Fecha: 12/5/2024
- * Hora: 20:08
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
- */
-using System;
+﻿using System;
 
-namespace Practicas.practica2.iIterator
+namespace Practicas
 {
-	/// <summary>
-	/// Description of InteradorDeCola.
-	/// </summary>
-	public class InteradorDeCola
+	
+	public class IteradorDeCola
 	{
-		public InteradorDeCola()
-		{
-		}
-	}
+    	List<Comparable> list;
+    	int posicionActual = 0;
+        
+        
+        public IteradorDeCola(Cola pila){
+    		list = pila.getComparables();
+        }
+        
+        public IteradorDeCola(List<Comparable> elementos){
+    		this.list = elementos;
+        }
+        
+        public object Actual()
+        {
+            return list[posicionActual];
+        }
+
+        public bool Fin()
+        {
+            return posicionActual >= list.Count;
+        }
+
+        public void Primero()
+        {
+            posicionActual = 0;
+        }
+
+        public void Siguiente()
+        {
+            posicionActual++;
+        }
+    }
 }
