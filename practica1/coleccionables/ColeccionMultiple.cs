@@ -70,7 +70,7 @@ namespace Practicas
 		
 		public Iterador CrearIterador()
 		{
-			return new IteradorConcreto(this.pila);
+			throw new NotImplementedException();
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Practicas
 		public static void run(){
 			Pila pilaAlumnos = new Pila();
 			Cola colaAlumnos = new Cola();
-			ColeccionMultiple multipleAlumnos = new ColeccionMultiple(pilaAlumnos, colaAlumnos);
+			//ColeccionMultiple multipleAlumnos = new ColeccionMultiple(pilaAlumnos, colaAlumnos); TODO YA QUE NO SE IMPLEMENTO AUN ITERADORDECOLECCIONMULTIPLE
 			Conjunto conjuntoAlumnos = new Conjunto();
 			Diccionario diccionarioAlumnos = new Diccionario();
 			
@@ -19,7 +19,6 @@ namespace Practicas
 			TestP1.llenarAlumnos(colaAlumnos);
 			TestP1.llenarAlumnos(conjuntoAlumnos);
 			TestP1.llenarAlumnos(diccionarioAlumnos);
-			TestP1.llenarAlumnos(multipleAlumnos);
 			
 			Console.WriteLine("\n*******INFORMANDO PILA*********");
 			TestP1.informarPersonas(pilaAlumnos);
@@ -33,8 +32,6 @@ namespace Practicas
 			imprimirElementos(conjuntoAlumnos);
 			Console.WriteLine("\n*******IMPRIMIR DICCIONARIO*********");
 			imprimirElementos(diccionarioAlumnos);
-			Console.WriteLine("\n*******IMPRIMIR COLECCION MULTIPLE*********");
-			imprimirElementos(multipleAlumnos);
 			
 			Console.WriteLine("\n*******CAMBIANDO STRATEGY*********");
 			cambiarEstrategia(pilaAlumnos, new StrategyComparacionLegajo());
