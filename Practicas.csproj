@@ -60,10 +60,11 @@
     <Compile Include="practica2\ClaveValor.cs" />
     <Compile Include="practica2\coleccionables\Conjunto.cs" />
     <Compile Include="practica2\coleccionables\Diccionario.cs" />
-    <Compile Include="practica2\iIterator\Iterable.cs" />
-    <Compile Include="practica2\iIterator\Iterador.cs" />
-    <Compile Include="practica2\iIterator\IteradorConcreto.cs" />
-    <Compile Include="practica2\iIterator\IteradorDiccionario.cs" />
+    <Compile Include="practica2\iterator\IteradorDeCola.cs" />
+    <Compile Include="practica2\iterator\Iterable.cs" />
+    <Compile Include="practica2\iterator\Iterador.cs" />
+    <Compile Include="practica2\iterator\IteradorDePila.cs" />
+    <Compile Include="practica2\iterator\IteradorDiccionario.cs" />
     <Compile Include="practica2\strategy\StrategyComparacion.cs" />
     <Compile Include="practica2\strategy\StrategyComparacionDni.cs" />
     <Compile Include="practica2\strategy\StrategyComparacionLegajo.cs" />
@@ -83,7 +84,7 @@
     <Folder Include="practica2" />
     <Folder Include="practica2\coleccionables" />
     <Folder Include="practica2\strategy" />
-    <Folder Include="practica2\iIterator" />
+    <Folder Include="practica2\iterator" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
   </ItemGroup>
