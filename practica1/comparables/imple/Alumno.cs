@@ -3,7 +3,7 @@
 namespace Practicas
 {
 
-	public class Alumno : Persona {
+	public class Alumno : Persona , Observador {
 		
 		private int legajo;
 		private double promedio;
@@ -67,9 +67,36 @@ namespace Practicas
 			return string.Format("[Alumno Nombre={0}, Dni={1}, Legajo={2}, Promedio={3}, Strategy={4}]", 
 			                     base.getNombre(), base.getDni(), this.legajo, this.promedio, this.strategyComparacion);
 		}
+		
+		public void prestarAtencion(){
+			Console.WriteLine("“Prestando atención”");
+		}
 
+		public void distraerse(){
+			int numero = GeneradorDeDatos.numeroAleatorio(3)+1;
+			switch(numero){
+				case 1:
+					Console.WriteLine("“Mirando el celular”");
+					break;
+				case 2:
+					Console.WriteLine("“Dibujando en el margen de la carpeta”");
+					break;
+				case 3:
+					Console.WriteLine("“Tirando aviones de papel”");
+					break;
+			}
+			
+		}
 		
-		
+		#region Observador implementation
+		public void actualizar(String accion)
+		{
+			if(accion.Equals("hablar"))
+				prestarAtencion();
+			else if(accion.Equals("escribir"))
+				distraerse();
+		}
+		#endregion
 	}
 
 	

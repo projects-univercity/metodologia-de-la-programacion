@@ -8,7 +8,7 @@ namespace Practicas
         
         void quitarObservador(Observador o);
 
-        void notificar(); //Avisa de que algo cambio
+        void notificar(String accion); //Avisa de que algo cambio
 
     }
 }

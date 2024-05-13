@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Practicas.practica3
+namespace Practicas
 {
 	
 	public class StrategyComparacionAntiguedad : StrategyComparacion

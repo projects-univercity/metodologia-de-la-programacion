@@ -1,16 +1,18 @@
 ﻿using System;
-using Practicas.practica3;
+using System.Collections.Generic;
 
 namespace Practicas
 {
 	
-	public class Profesor : Persona
+	public class Profesor : Persona, Observado
 	{
 		private int antiguedad;
 		private StrategyComparacion strategy;
+		private List<Observador>alumnos;
 		
 		public Profesor(){
 			this.strategy = new StrategyComparacionAntiguedad();
+			this.alumnos = new List<Observador>();
 		}
 		
 		public Profesor(String nombre, int dni, int antiguedad) : base (nombre, dni)
@@ -33,12 +35,8 @@ namespace Practicas
 			this.strategy = strategy;
 		}
 		
-		public void hablarALaClase(){
-			Console.WriteLine("Hablando de algún tema");
-		}
-		
-		public void escribirEnElPizarron() {
-			Console.WriteLine("Escribiendo en el pizarrón");
+		public List<Observador> getAlumnos(){
+			return this.alumnos;
 		}
 		
 		public override bool sosIgual(Comparable comparable){
@@ -58,5 +56,33 @@ namespace Practicas
 			return string.Format("[Profesor Antiguedad={0}, Strategy={1}]", antiguedad, strategy);
 		}
 
+		public void hablarALaClase(){
+			Console.WriteLine("Profe: " + this.nombre + " Hablando de algún tema");
+			this.notificar("hablar");
+		}
+		
+		public void escribirEnElPizarron() {
+			Console.WriteLine("Profe: " + this.nombre + " Escribiendo en el pizarrón");
+			this.notificar("escribir");
+		}
+		
+		#region Observado implementation
+		public void agregarObservador(Observador observador)
+		{
+			this.alumnos.Add(observador);
+		}
+		
+		public void quitarObservador(Observador observador)
+		{
+			this.alumnos.Remove(observador);
+		}
+		
+		public void notificar(String accion)
+		{
+			foreach (Observador alumno in this.alumnos) {
+				alumno.actualizar(accion);
+			}
+		}
+		#endregion
 	}
 }
