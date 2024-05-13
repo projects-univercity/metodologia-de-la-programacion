@@ -80,7 +80,7 @@ namespace Practicas
         
 		public Iterador CrearIterador()
 		{
-			return new IteradorConcreto(this.comparables);
+			return new IteradorDePila(this.comparables);
 		}
     }
 }

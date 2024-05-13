@@ -3,17 +3,17 @@ using System.Collections.Generic;
 
 namespace Practicas
 {
-    public class IteradorConcreto : Iterador
+    public class IteradorDePila : Iterador
     {
     	List<Comparable> list;
     	int posicionActual = 0;
         
         
-        public IteradorConcreto(Pila pila){
+        public IteradorDePila(Pila pila){
     		list = pila.getComparables();
         }
         
-        public IteradorConcreto(List<Comparable> elementos){
+        public IteradorDePila(List<Comparable> elementos){
     		this.list = elementos;
         }
         

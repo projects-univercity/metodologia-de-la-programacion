@@ -49,30 +49,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="practica1\Alumno.cs" />
-    <Compile Include="practica1\Cola.cs" />
-    <Compile Include="practica1\Coleccionable.cs" />
-    <Compile Include="practica1\ColeccionMultiple.cs" />
-    <Compile Include="practica1\Comparable.cs" />
-    <Compile Include="practica1\Numero.cs" />
-    <Compile Include="practica1\Persona.cs" />
-    <Compile Include="practica1\Pila.cs" />
+    <Compile Include="practica1\coleccionables\Coleccionable.cs" />
+    <Compile Include="practica1\coleccionables\imple\Cola.cs" />
+    <Compile Include="practica1\coleccionables\imple\ColeccionMultiple.cs" />
+    <Compile Include="practica1\coleccionables\imple\Pila.cs" />
+    <Compile Include="practica1\comparables\Comparable.cs" />
+    <Compile Include="practica1\comparables\imple\Alumno.cs" />
+    <Compile Include="practica1\comparables\imple\Numero.cs" />
+    <Compile Include="practica1\comparables\imple\Persona.cs" />
     <Compile Include="practica2\ClaveValor.cs" />
-    <Compile Include="practica2\Conjunto.cs" />
-    <Compile Include="practica2\Diccionario.cs" />
-    <Compile Include="practica2\Iterable.cs" />
-    <Compile Include="practica2\Iterador.cs" />
-    <Compile Include="practica2\IteradorConcreto.cs" />
-    <Compile Include="practica2\IteradorDiccionario.cs" />
-    <Compile Include="practica2\StrategyComparacion.cs" />
-    <Compile Include="practica2\StrategyComparacionDni.cs" />
-    <Compile Include="practica2\StrategyComparacionLegajo.cs" />
-    <Compile Include="practica2\StrategyComparacionNombre.cs" />
-    <Compile Include="practica2\StrategyComparacionPromedio.cs" />
-    <Compile Include="practica3\fabrica\FabricaDeAlumnos.cs" />
-    <Compile Include="practica3\fabrica\FabricaDeComparables.cs" />
-    <Compile Include="practica3\fabrica\FabricaDeNumeros.cs" />
-    <Compile Include="practica3\fabrica\FabricaDeProfesores.cs" />
+    <Compile Include="practica2\coleccionable\Conjunto.cs" />
+    <Compile Include="practica2\coleccionable\Diccionario.cs" />
+    <Compile Include="practica2\iterator\imple\IteradorDeCola.cs" />
+    <Compile Include="practica2\iterator\imple\IteradorDePila.cs" />
+    <Compile Include="practica2\iterator\imple\IteradorDiccionario.cs" />
+    <Compile Include="practica2\iterator\Iterable.cs" />
+    <Compile Include="practica2\iterator\Iterador.cs" />
+    <Compile Include="practica2\strategy\imple\StrategyComparacionDni.cs" />
+    <Compile Include="practica2\strategy\imple\StrategyComparacionLegajo.cs" />
+    <Compile Include="practica2\strategy\imple\StrategyComparacionNombre.cs" />
+    <Compile Include="practica2\strategy\imple\StrategyComparacionPromedio.cs" />
+    <Compile Include="practica2\strategy\StrategyComparacion.cs" />
+    <Compile Include="practica3\factory-method\FabricaDeComparables.cs" />
+    <Compile Include="practica3\factory-method\impl\FabricaDeAlumnos.cs" />
+    <Compile Include="practica3\factory-method\impl\FabricaDeNumeros.cs" />
+    <Compile Include="practica3\factory-method\impl\FabricaDeProfesores.cs" />
     <Compile Include="practica3\GeneradorDeDatos.cs" />
     <Compile Include="practica3\LectorDeDatos.cs" />
     <Compile Include="practica3\observer\Observado.cs" />
@@ -88,10 +89,20 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="practica1\coleccionables\imple" />
+    <Folder Include="practica1\comparables" />
+    <Folder Include="practica1\coleccionables" />
+    <Folder Include="practica1\comparables\imple" />
+    <Folder Include="practica2\coleccionable" />
+    <Folder Include="practica2\iterator\imple" />
+    <Folder Include="practica2\strategy" />
+    <Folder Include="practica2\iterator" />
+    <Folder Include="practica2\strategy\imple" />
     <Folder Include="practica3" />
     <Folder Include="practica2" />
+    <Folder Include="practica3\factory-method\impl" />
     <Folder Include="practica3\observer" />
-    <Folder Include="practica3\fabrica" />
+    <Folder Include="practica3\factory-method" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
   </ItemGroup>

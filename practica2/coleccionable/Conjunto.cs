@@ -74,7 +74,7 @@ namespace Practicas
 		#region Iterable implementation
 		public Iterador CrearIterador()
 		{
-			return new IteradorConcreto(this.comparables);
+			return new IteradorDePila(this.comparables);
 		}
 		#endregion
 		
