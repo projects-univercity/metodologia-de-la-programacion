@@ -1,18 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Practicas
 {
 	
-	public class IteradorDeCola
+	public class IteradorDeCola : Iterador
 	{
     	List<Comparable> list;
     	int posicionActual = 0;
         
         
-        public IteradorDeCola(Cola pila){
-    		list = pila.getComparables();
-        }
-        
+    	//public IteradorDeCola(Cola cola){
+    		//list = cola.getComparables();
+    	//}
+    	
         public IteradorDeCola(List<Comparable> elementos){
     		this.list = elementos;
         }

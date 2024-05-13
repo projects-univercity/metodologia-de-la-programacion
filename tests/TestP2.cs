@@ -11,7 +11,6 @@ namespace Practicas
 		public static void run(){
 			Pila pilaAlumnos = new Pila();
 			Cola colaAlumnos = new Cola();
-			//ColeccionMultiple multipleAlumnos = new ColeccionMultiple(pilaAlumnos, colaAlumnos); TODO YA QUE NO SE IMPLEMENTO AUN ITERADORDECOLECCIONMULTIPLE
 			Conjunto conjuntoAlumnos = new Conjunto();
 			Diccionario diccionarioAlumnos = new Diccionario();
 			

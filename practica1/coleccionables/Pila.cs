@@ -6,9 +6,10 @@ namespace Practicas
     
     public class Pila : Coleccionable
     {
-        List<Comparable> comparables = new List<Comparable>();
+        List<Comparable> comparables;
         
         public Pila(){
+        	this.comparables = new List<Comparable>();
         }
         
         public List<Comparable> getComparables(){
@@ -77,7 +78,7 @@ namespace Practicas
         
 		public Iterador CrearIterador()
 		{
-			return new IteradorConcreto(this.comparables);
+			return new IteradorDePila(this.comparables);
 		}
     }
 }

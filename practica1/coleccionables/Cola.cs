@@ -7,9 +7,10 @@ namespace Practicas
 
 	class Cola : Coleccionable
     {
-		List<Comparable>comparables = new List<Comparable>();
+		List<Comparable>comparables;
         
         public Cola(){
+			this.comparables = new List<Comparable>();
         }
         
 		public List<Comparable> getComparables(){
@@ -79,7 +80,7 @@ namespace Practicas
         
 		public Iterador CrearIterador()
 		{
-			return new IteradorConcreto(this.comparables);
+			return new IteradorDeCola(this.comparables);
 		}
     }
 }
