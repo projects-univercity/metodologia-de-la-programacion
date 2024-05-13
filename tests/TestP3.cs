@@ -28,19 +28,19 @@ namespace Practicas
 			
 			Console.WriteLine("******PILA DE PROFESORES CON FACTORY METHOD********");
 			Pila pilaProfes = new Pila();
-			TestP1.llenar(pilaProfes, 2);
-			TestP1.informar(pilaProfes, 2);
+			TestP1.llenar(pilaProfes, 3);
+			TestP1.informar(pilaProfes, 3);
 			
 			Console.WriteLine("******COLA DE PROFESORES CON FACTORY METHOD********");
 			Cola colaProfes = new Cola();
-			TestP1.llenar(colaProfes, 2);
-			TestP1.informar(colaProfes, 2);
+			TestP1.llenar(colaProfes, 3);
+			TestP1.informar(colaProfes, 3);
 			
 			
 			Console.WriteLine("******COLECCION MULTIPLE DE PROFESORES CON FACTORY METHOD********");
 			ColeccionMultiple multipleProfes =  new ColeccionMultiple(new Pila(), new Cola());
-			TestP1.llenar(multipleProfes, 2);
-			TestP1.informar(multipleProfes, 2);
+			TestP1.llenar(multipleProfes, 3);
+			TestP1.informar(multipleProfes, 3);
 		}
 		
 		
