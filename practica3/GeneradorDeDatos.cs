@@ -19,6 +19,14 @@ namespace Practicas
         	return generador.Next(0, max);
     	}
 		
+		public static int numeroAleatorio(int min, int max)
+    	{
+        	if (min <= 0)
+            	throw new ArgumentException("El valor máximo debe ser mayor que " + min);
+
+        	return generador.Next(min, max);
+    	}
+		
 		public static string stringAleatorio(int cant)
     	{
         	if (cant <= 0)

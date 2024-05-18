@@ -78,7 +78,7 @@ namespace Practicas
         
 		public Iterador CrearIterador()
 		{
-			return new IteradorDePila(this.comparables);
+			return new IteradorDePila(this);
 		}
     }
 }

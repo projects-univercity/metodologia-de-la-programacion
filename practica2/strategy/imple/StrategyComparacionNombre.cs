@@ -13,8 +13,8 @@ namespace Practicas
 		public bool sosIgual(Comparable thisComparable, Comparable comparable)
 		{
 			String thisName = ((Alumno)thisComparable).getNombre();
-			//String name = ((Alumno)comparable).getNombre();
-			return thisName.Equals("");
+			String name = ((Alumno)comparable).getNombre();
+			return thisName.Equals(name);
 		}
 		
 		public bool sosMenor(Comparable thisComparable, Comparable comparable)

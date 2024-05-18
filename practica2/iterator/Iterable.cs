@@ -5,6 +5,6 @@ namespace Practicas
 
     public interface Iterable
     {
-        Iterador CrearIterador();
+        Iterador CrearIterador(/*Iterable iterable*/);
     }
 }

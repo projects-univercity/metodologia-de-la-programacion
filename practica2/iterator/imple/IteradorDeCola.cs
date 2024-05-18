@@ -1,40 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Practicas.practica2.iterator
+namespace Practicas
 {
 	public class IteradorDeCola: Iterador
     {
-    	List<Comparable> list;
+    	Cola cola;
     	int posicionActual = 0;
         
         
-        //public IteradorDeCola(Cola cola){
-    		//list = cola.getComparables();
-        //}
-        
-        public IteradorDeCola(List<Comparable> elementos){
-    		this.list = elementos;
+        public IteradorDeCola(Cola cola){
+    		this.cola = cola;
+    		this.Primero();
         }
+        
+        //public IteradorDeCola(List<Comparable> elementos){
+    	//	this.list = elementos;
+        //}
         
         public object Actual()
         {
-            return list[posicionActual];
+        	return this.cola.getComparables()[this.posicionActual];
         }
 
         public bool Fin()
         {
-            return posicionActual >= list.Count;
+        	return this.posicionActual >= this.cola.cuantos();
         }
 
         public void Primero()
         {
-            posicionActual = 0;
+            this.posicionActual = 0;
         }
 
         public void Siguiente()
         {
-            posicionActual++;
+            this.posicionActual++;
         }
     }
 }

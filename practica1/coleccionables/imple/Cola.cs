@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Practicas
 {
 
-	class Cola : Coleccionable
+	public class Cola : Coleccionable
     {
 		List<Comparable>comparables = new List<Comparable>();
         
@@ -80,7 +80,7 @@ namespace Practicas
         
 		public Iterador CrearIterador()
 		{
-			return new IteradorDePila(this.comparables);
+			return new IteradorDeCola(this);
 		}
     }
 }

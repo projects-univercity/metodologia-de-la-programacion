@@ -80,16 +80,24 @@
     <Compile Include="practica3\observer\Observador.cs" />
     <Compile Include="practica3\Profesor.cs" />
     <Compile Include="practica3\StrategyComparacionAntiguedad.cs" />
+    <Compile Include="practica4\adapter\AlumnoAdapter.cs" />
+    <Compile Include="practica4\adapter\AlumnoMuyEstudioso.cs" />
+    <Compile Include="practica4\decorator\DecoradoAlumno.cs" />
+    <Compile Include="practica4\decorator\DecoradoLegajo.cs" />
+    <Compile Include="practica4\decorator\IAlumno.cs" />
+    <Compile Include="practica4\MDPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\Program.cs" />
     <Compile Include="tests\TestP1.cs" />
     <Compile Include="tests\TestP2.cs" />
     <Compile Include="tests\TestP3.cs" />
+    <Compile Include="tests\TestP4.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="practica4" />
     <Folder Include="practica1\coleccionables\imple" />
     <Folder Include="practica1\comparables" />
     <Folder Include="practica1\coleccionables" />
@@ -104,6 +112,8 @@
     <Folder Include="practica3\factory-method\impl" />
     <Folder Include="practica3\observer" />
     <Folder Include="practica3\factory-method" />
+    <Folder Include="practica4\adapter" />
+    <Folder Include="practica4\decorator" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
   </ItemGroup>

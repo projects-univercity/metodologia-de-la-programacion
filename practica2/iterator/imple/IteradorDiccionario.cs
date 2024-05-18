@@ -6,32 +6,32 @@ namespace Practicas
 	public class IteradorDiccionario : Iterador
 	{
 		
-		List<ClaveValor> list;
+		Diccionario diccionario;
     	int posicionActual = 0;
 
-		public IteradorDiccionario(List<ClaveValor> list)
+		public IteradorDiccionario(Diccionario diccionario)
 		{
-    		this.list = list;
+    		this.diccionario = diccionario;
 		}
 	
         public object Actual()
         {
-            return list[posicionActual];
+        	return diccionario.getClaveValores()[posicionActual];
         }
 
         public bool Fin()
         {
-            return posicionActual >= this.list.Count;
+        	return this.posicionActual >= this.diccionario.cuantos();
         }
 
         public void Primero()
         {
-            posicionActual = 0;
+            this.posicionActual = 0;
         }
 
         public void Siguiente()
         {
-            posicionActual++;
+            this.posicionActual++;
         }
 	}
 }

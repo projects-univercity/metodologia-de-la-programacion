@@ -13,6 +13,10 @@ namespace Practicas
 		{
 			this.clavesValores = new List<ClaveValor>();
 		}
+		
+		public List<ClaveValor> getClaveValores(){
+			return this.clavesValores;
+		}
 
 		/**Agrega la asociación clave-valor al diccionario si es
 		   que la clave no existe en el diccionario. 
@@ -102,7 +106,7 @@ namespace Practicas
 
 		public Iterador CrearIterador()
 		{
-			return new IteradorDiccionario(this.clavesValores);
+			return new IteradorDiccionario(this);
 		}
 	}
 }

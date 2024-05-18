@@ -3,21 +3,30 @@
 namespace Practicas
 {
 
-	public class Alumno : Persona , Observador {
+	public class Alumno : Persona , Observador, IAlumno {
 		
 		private int legajo;
 		private double promedio;
 		private StrategyComparacion strategyComparacion;
+		private int calificacion;
 		
 		public Alumno()
 		{
-			this.strategyComparacion = new StrategyComparacionDni();
+			this.strategyComparacion = new StrategyComparacionNombre();
 		}
 		
 		public Alumno(String nombre, int dni, int legajo, double promedio): base(nombre, dni)
 		{
 			this.legajo = legajo;
 			this.promedio = promedio;
+			this.strategyComparacion = new StrategyComparacionDni();
+		}
+		
+		public Alumno(String nombre, int dni, int legajo, double promedio, int calificacion): base(nombre, dni)
+		{
+			this.legajo = legajo;
+			this.promedio = promedio;
+			this.calificacion = calificacion;
 			this.strategyComparacion = new StrategyComparacionDni();
 		}
 		
@@ -44,6 +53,13 @@ namespace Practicas
 		}
 		public void setPromedio(double promedio){
 			this.promedio = promedio;
+		}
+		
+		public int getCalificacion(){
+			return this.calificacion;
+		}
+		public void setCalificacion(int calificacion){
+			this.calificacion = calificacion;
 		}
 		
 		public override bool sosIgual(Comparable comparable)
@@ -97,6 +113,24 @@ namespace Practicas
 				distraerse();
 		}
 		#endregion
+		
+		
+					//Práctica 4. Ejercicio 1.
+		/**
+		 * devuelve un número al azar entre 1 y 3 como respuesta (simulando un multiple choice)
+		 */
+		public virtual int responderPregunta(int pregunta){
+			return GeneradorDeDatos.numeroAleatorio(1, 3);
+		}
+		
+		/**
+		 * Devuelve un string con el nombre y apellido del alumno junto con la última calificación obtenida
+		 */
+		public string mostrarCalificacion(){
+			return String.Format("{0} calificacion: {1} ", this.nombre, this.calificacion);
+		}
+
+		
 	}
 
 	
