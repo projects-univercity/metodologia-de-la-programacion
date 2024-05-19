@@ -13,7 +13,7 @@ namespace Practicas
 		
 		public static int numeroAleatorio(int max)
     	{
-        	if (max <= 0)
+        	if (max < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que cero.");
 
         	return generador.Next(0, max);
@@ -21,10 +21,10 @@ namespace Practicas
 		
 		public static int numeroAleatorio(int min, int max)
     	{
-        	if (min <= 0)
+        	if (min < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que " + min);
 
-        	return generador.Next(min, max);
+        	return generador.Next(min, max+1);
     	}
 		
 		public static string stringAleatorio(int cant)

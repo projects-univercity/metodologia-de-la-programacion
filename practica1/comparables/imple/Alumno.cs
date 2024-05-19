@@ -126,8 +126,9 @@ namespace Practicas
 		/**
 		 * Devuelve un string con el nombre y apellido del alumno junto con la última calificación obtenida
 		 */
-		public string mostrarCalificacion(){
-			return String.Format("{0} calificacion: {1} ", this.nombre, this.calificacion);
+		public string mostrarCalificacion()
+		{
+			return String.Format("{0} {1}", this.nombre, this.calificacion);
 		}
 
 		

@@ -40,6 +40,9 @@ namespace Practicas
                 case 3:
                     fabrica = new FabricaDeProfesores();
                     break;
+                case 4:
+                    fabrica =new FabricaDeAlumnoMuyEstudioso();
+                    break;
             }
             return fabrica;
         }

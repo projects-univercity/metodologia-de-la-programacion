@@ -82,9 +82,13 @@
     <Compile Include="practica3\StrategyComparacionAntiguedad.cs" />
     <Compile Include="practica4\adapter\AlumnoAdapter.cs" />
     <Compile Include="practica4\adapter\AlumnoMuyEstudioso.cs" />
-    <Compile Include="practica4\decorator\DecoradoAlumno.cs" />
-    <Compile Include="practica4\decorator\DecoradoLegajo.cs" />
+    <Compile Include="practica4\decorator\AlumnoDecorador.cs" />
     <Compile Include="practica4\decorator\IAlumno.cs" />
+    <Compile Include="practica4\decorator\impl\DecoradoConAsteriscos.cs" />
+    <Compile Include="practica4\decorator\impl\DecoradoLegajo.cs" />
+    <Compile Include="practica4\decorator\impl\DecoradoNotaEnLetra.cs" />
+    <Compile Include="practica4\decorator\impl\DecoradoPromocion.cs" />
+    <Compile Include="practica4\FabricaDeAlumnoMuyEstudioso.cs" />
     <Compile Include="practica4\MDPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\Program.cs" />
@@ -114,6 +118,7 @@
     <Folder Include="practica3\factory-method" />
     <Folder Include="practica4\adapter" />
     <Folder Include="practica4\decorator" />
+    <Folder Include="practica4\decorator\impl" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
   </ItemGroup>

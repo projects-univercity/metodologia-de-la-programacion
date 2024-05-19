@@ -16,7 +16,7 @@ namespace Practicas
 		
 		public override int responderPregunta(int pregunta)
 		{
-			return 3;
+			return pregunta % 3;
 		}
 
 	}

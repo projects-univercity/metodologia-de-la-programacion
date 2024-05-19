@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using MetodologíasDeProgramaciónI;
 
 namespace Practicas
@@ -10,56 +11,66 @@ namespace Practicas
 		}
 		
 		public static void run(){
-			/*Teacher teacher = new Teacher();
+			Console.WriteLine("		PATRON ADAPTER\n");
+			Teacher teacher = new Teacher();
 			
-			int contador1 = 0;
-			while (contador1 < 10) {
-				teacher.goToClass(new AlumnoAdapter(
-					new Alumno(
-						GeneradorDeDatos.stringAleatorio(10), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(10)
-						)
-					)
-				);
-				contador1++;
-			}
+			List<Alumno> alumnos = new List<Alumno>();
 			
-			int contador2 = 0;
-			while (contador2 < 10) {
-				teacher.goToClass(new AlumnoAdapter(
-					new AlumnoMuyEstudioso(
-						GeneradorDeDatos.stringAleatorio(10), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(10)
-						)
-					)
-				);
-				contador2++;
-			}
-			
-			teacher.teachingAClass();*/
+			llenarClaseConAlumnos(teacher, alumnos, 4);
+			llenarClaseConAlumnos(teacher, alumnos, 2);
 			
 			
-			Console.WriteLine("***************PATRON DECORATOR**********************");
-			Alumno alumno = new Alumno(
-						GeneradorDeDatos.stringAleatorio(10), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(99999999), 
-						GeneradorDeDatos.numeroAleatorio(10)
-					);
-			alumno.setCalificacion(8);
 			
-			DecoradoLegajo decorado = new DecoradoLegajo(alumno);
+			//Dictado una clase
+			teacher.teachingAClass();
 			
-			Console.WriteLine(decorado.mostrarCalificacion());
+			//Console.WriteLine("		PATRON DECORATOR\n");
+			
+			aplicarDecoradorCalificacionALaDeClase(alumnos);
+			
 			
 		}
 		
+		/**
+		* Metodo para llenar la lista de estudiantes que tiene como atributo el Teacher.
+		* Se puede llenar con Alumno, alumno muy estudioso,
+		 * Utilizando las FabricaDeAlumno(2) y FabricaDeAlumnoMuyEstudioso(4)
+		* 
+		*/ 
+		public static void llenarClaseConAlumnos(Teacher teacher, List<Alumno> alumnos, int optionFabrica){
+			if(optionFabrica != 2 && optionFabrica != 4)
+				return;
+			int contador = 0;
+			
+			while (contador < 8) {
+				Alumno alumno = (Alumno)FabricaDeComparables.crearAleatorio(optionFabrica);
+				teacher.goToClass(new AlumnoAdapter(alumno));
+				alumnos.Add(alumno);
+				contador++;
+			}
+		}
 		
-	
+		/** Ejercicio 7
+ 		* Arme los Students con todos los decorados implementado en el ejercicio
+		* anterior para que se impriman de la siguiente manera:
+		****************************************************
+		* 5) Ratón Pérez (12345/6) 6 (SEIS) (APROBADO) *
+		****************************************************
+		*/
+		
+		public static void decorandoCalificacion(IAlumno alumno){
+			IAlumno decoradoLegajo = new DecoradoLegajo(alumno);
+			IAlumno decoradoNota = new DecoradoNotaEnLetra(decoradoLegajo);
+			IAlumno decoradoPromocion = new DecoradoPromocion(decoradoNota);
+			IAlumno decoradoAsteriscos = new DecoradoConAsteriscos(decoradoPromocion);
+			Console.WriteLine(decoradoAsteriscos.mostrarCalificacion());
+		}
+		
+		public static void aplicarDecoradorCalificacionALaDeClase(List<Alumno> alumnos){
+			foreach (Alumno alumno in alumnos) {
+				decorandoCalificacion(alumno);
+			}
+		}
 		
 	}
 }

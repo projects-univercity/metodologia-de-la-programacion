@@ -3,11 +3,12 @@
 namespace Practicas
 {
 
-	public abstract class DecoradoAlumno : IAlumno
+	public abstract class AlumnoDecorador : IAlumno
 	{
 		protected IAlumno adicional;
 		
-		public DecoradoAlumno(IAlumno adicional){
+		public AlumnoDecorador(IAlumno adicional)
+		{
 			this.adicional = adicional;
 		}
 		
@@ -28,7 +29,7 @@ namespace Practicas
 		{
 			return adicional.getCalificacion();
 		}
-		public string mostrarCalificacion()
+		public virtual string mostrarCalificacion()
 		{
 			return adicional.mostrarCalificacion();
 		}

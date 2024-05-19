@@ -1,12 +1,4 @@
-﻿/*
- * Creado por SharpDevelop.
- * Usuario: osiri
- * Fecha: 18/4/2024
- * Hora: 07:21
- * 
- * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
- */
-using System;
+﻿using System;
 
 namespace Practicas
 {
@@ -23,7 +15,7 @@ namespace Practicas
 			//TestP3.run();
 			//TestP3.testObserver();
 			TestP4.run();
-			Console.Write("Press any key to continue . . . ");
+			//Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}
 	}
