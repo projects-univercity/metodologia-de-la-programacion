@@ -21,7 +21,7 @@ namespace Practicas
 			
 			
 			
-			//Dictado una clase
+			//Dictando una clase
 			teacher.teachingAClass();
 			
 			//Console.WriteLine("		PATRON DECORATOR\n");

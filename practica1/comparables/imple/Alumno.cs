@@ -3,7 +3,7 @@
 namespace Practicas
 {
 
-	public class Alumno : Persona , Observador, IAlumno {
+	public class Alumno : Persona , Observador, IAlumno, IAlumnoProxy {
 		
 		private int legajo;
 		private double promedio;
@@ -120,6 +120,7 @@ namespace Practicas
 		 * devuelve un número al azar entre 1 y 3 como respuesta (simulando un multiple choice)
 		 */
 		public virtual int responderPregunta(int pregunta){
+			//Console.WriteLine("responder pregunta detro del Alumno");
 			return GeneradorDeDatos.numeroAleatorio(1, 3);
 		}
 		

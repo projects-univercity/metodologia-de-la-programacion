@@ -14,7 +14,8 @@ namespace Practicas
 			//TestP2.run();
 			//TestP3.run();
 			//TestP3.testObserver();
-			TestP4.run();
+			//TestP4.run();
+			TestP5.run();
 			//Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}

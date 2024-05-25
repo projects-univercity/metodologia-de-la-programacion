@@ -5,7 +5,9 @@ namespace Practicas
 {
 	public class AlumnoAdapter : Student
 	{
-		Alumno alumno;
+		protected Alumno alumno;
+		
+		public AlumnoAdapter(){}
 		
 		public AlumnoAdapter(Alumno alumno)
 		{

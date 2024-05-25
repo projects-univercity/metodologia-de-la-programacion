@@ -12,11 +12,16 @@ namespace Practicas
 		#region implemented abstract members of FabricaDeComparables
 		public override Comparable crearAleatorio()
 		{
-			Alumno alumno = new Alumno();
-			alumno.setNombre(GeneradorDeDatos.stringAleatorio(6));
+			Alumno alumno = new Alumno(
+					GeneradorDeDatos.stringAleatorio(6),
+					GeneradorDeDatos.numeroAleatorio(99999999),
+					GeneradorDeDatos.numeroAleatorio(99999999),
+					GeneradorDeDatos.numeroAleatorio(10)
+			);
+			/*alumno.setNombre(GeneradorDeDatos.stringAleatorio(6));
 			alumno.setDni(GeneradorDeDatos.numeroAleatorio(99999999));
 			alumno.setPromedio(GeneradorDeDatos.numeroAleatorio(10));
-			alumno.setLegajo(GeneradorDeDatos.numeroAleatorio(99999999));
+			alumno.setLegajo(GeneradorDeDatos.numeroAleatorio(99999999));*/
 			return alumno;
 		}
 		
