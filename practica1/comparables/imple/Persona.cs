@@ -7,12 +7,12 @@ namespace Practicas
     public class Persona: Comparable
     {
         protected String nombre;
-        protected int dni;
+        protected double dni;
         
         public Persona(){
         }
         
-        public Persona(String nombre, int dni) {
+        public Persona(String nombre, double dni) {
             this.nombre = nombre;
             this.dni = dni;
         }
@@ -26,10 +26,10 @@ namespace Practicas
         }
         
         // disable once ConvertToAutoProperty
-        public int getDni(){
+        public double getDni(){
             return this.dni;
         }
-        public void setDni(int dni){
+        public void setDni(double dni){
             this.dni = dni;
         }
         

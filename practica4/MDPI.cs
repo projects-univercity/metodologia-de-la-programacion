@@ -57,6 +57,10 @@ namespace MetodologíasDeProgramaciónI
 		{
 			list.Sort(new StudentComparer());
 		}
+		
+		public int countStudents(){
+			return list.Count;
+		}
 	}
 	
 	internal class ListOfStudentIterator : IteratorOfStudent
@@ -121,6 +125,10 @@ namespace MetodologíasDeProgramaciónI
 		public void goToClass(Student student)
 		{
 			students.addStudent(student);
+		}
+		
+		public int countStudents(){
+			return ((ListOfStudent)students).countStudents();
 		}
 		
 		public void teachingAClass()

@@ -7,15 +7,23 @@ namespace Practicas
 
         public FabricaDeNumeros(){}
         
+        public FabricaDeNumeros(Manejador responsable) /*: base (responsable)*/{
+        }
+        
 		#region implemented abstract members of FabricaDeComparables
 		public override Comparable crearAleatorio()
 		{
-			int numero = GeneradorDeDatos.numeroAleatorio(100);
+			int numero = responsable.numeroAleatorio(100);
         	return new Numero(numero);
 		}
 		public override Comparable crearPorTeclado()
 		{
-			int numero = LectorDeDatos.numeroPorTeclado();
+			int numero = responsable.numeroPorTeclado();
+			return new Numero(numero);
+		}
+		
+		public override Comparable crearConLectorDeArchivo(){
+			int numero = (int)(responsable.numeroDesdeArchivo(5));
 			return new Numero(numero);
 		}
 		#endregion

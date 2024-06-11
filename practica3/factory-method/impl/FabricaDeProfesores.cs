@@ -22,18 +22,26 @@ namespace Practicas
 		public override Comparable crearAleatorio()
 		{
 			Profesor profesor = new Profesor();
-			profesor.setNombre(GeneradorDeDatos.stringAleatorio(7));
-			profesor.setDni(GeneradorDeDatos.numeroAleatorio(99999999));
-			profesor.setAntiguedad(GeneradorDeDatos.numeroAleatorio(30));
+			profesor.setNombre(responsable.stringAleatorio(7));
+			profesor.setDni(responsable.numeroAleatorio(99999999));
+			profesor.setAntiguedad(responsable.numeroAleatorio(30));
 			return profesor;
 		}
 
 		public override Comparable crearPorTeclado()
 		{
 			Profesor profesor = new Profesor();
-			profesor.setNombre(LectorDeDatos.stringPorTeclado());
-			profesor.setDni(LectorDeDatos.numeroPorTeclado());
-			profesor.setAntiguedad(LectorDeDatos.numeroPorTeclado());
+			profesor.setNombre(responsable.stringPorTeclado());
+			profesor.setDni(responsable.numeroPorTeclado());
+			profesor.setAntiguedad(responsable.numeroPorTeclado());
+			return profesor;
+		}
+		
+		public override Comparable crearConLectorDeArchivo(){
+			Profesor profesor = new Profesor();
+			profesor.setNombre(responsable.stringDesdeArchivo(5));
+			profesor.setDni((int)responsable.numeroDesdeArchivo(99999999));
+			profesor.setAntiguedad((int)responsable.numeroDesdeArchivo(20));
 			return profesor;
 		}
 

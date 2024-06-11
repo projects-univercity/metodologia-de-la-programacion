@@ -21,7 +21,7 @@ namespace Practicas
 		{
 			return adicional.getPromedio();
 		}
-		public int getLegajo()
+		public double getLegajo()
 		{
 			return adicional.getLegajo();
 		}
@@ -36,6 +36,26 @@ namespace Practicas
 		public int responderPregunta(int pregunta)
 		{
 			return adicional.responderPregunta(pregunta);
+		}
+		
+		/**
+		*  Esto es necesario para implementar ya que IAlumno debe heredar de Comparable, 
+		*  para que AlumnoProxy que implementa IAlumno pueda ser comparable 
+		*/
+		public bool sosIgual(Comparable comparable){
+			return this.adicional.sosIgual(comparable);
+		}
+		
+		public bool sosMayor(Comparable comparable){
+			return this.adicional.sosMenor(comparable);
+		}
+		
+		public bool sosMenor(Comparable comparable){
+			return this.adicional.sosMenor(comparable);
+		}
+		
+		public void setCalificacion(int calificacion){
+			this.adicional.setCalificacion(calificacion);
 		}
 		#endregion
 		

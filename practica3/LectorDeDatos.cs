@@ -2,20 +2,23 @@
 
 namespace Practicas
 {
-	public class LectorDeDatos
+	public class LectorDeDatos : Manejador
 	{
-		public LectorDeDatos()
+		
+		public LectorDeDatos(){}
+		
+		public LectorDeDatos(Manejador sucesor) : base (sucesor)
 		{
 		}
 		
-		public static int numeroPorTeclado()
+		public override int numeroPorTeclado()
     	{
             Console.Write("Ingrese un número: ");
             string entrada = Console.ReadLine();
             return int.Parse(entrada);
     	}
 		
-		public static string stringPorTeclado()
+		public override string stringPorTeclado()
     	{
         	Console.Write("Ingrese cadena: ");
         	return Console.ReadLine();

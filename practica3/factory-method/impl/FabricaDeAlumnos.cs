@@ -13,10 +13,10 @@ namespace Practicas
 		public override Comparable crearAleatorio()
 		{
 			Alumno alumno = new Alumno(
-					GeneradorDeDatos.stringAleatorio(6),
-					GeneradorDeDatos.numeroAleatorio(99999999),
-					GeneradorDeDatos.numeroAleatorio(99999999),
-					GeneradorDeDatos.numeroAleatorio(10)
+					responsable.stringAleatorio(6),
+					responsable.numeroAleatorio(99999999),
+					responsable.numeroAleatorio(99999999),
+					responsable.numeroAleatorio(10)
 			);
 			/*alumno.setNombre(GeneradorDeDatos.stringAleatorio(6));
 			alumno.setDni(GeneradorDeDatos.numeroAleatorio(99999999));
@@ -28,10 +28,19 @@ namespace Practicas
 		public override Comparable crearPorTeclado()
 		{
 			Alumno alumno = new Alumno();
-			alumno.setNombre(LectorDeDatos.stringPorTeclado());
-			alumno.setDni(LectorDeDatos.numeroPorTeclado());
-			alumno.setPromedio(LectorDeDatos.numeroPorTeclado());
-			alumno.setLegajo(LectorDeDatos.numeroPorTeclado());
+			alumno.setNombre(responsable.stringPorTeclado());
+			alumno.setDni(responsable.numeroPorTeclado());
+			alumno.setPromedio(responsable.numeroPorTeclado());
+			alumno.setLegajo(responsable.numeroPorTeclado());
+			return alumno;
+		}
+		
+		public override Comparable crearConLectorDeArchivo(){
+			Alumno alumno = new Alumno();
+			alumno.setNombre(responsable.stringDesdeArchivo(10));
+			alumno.setDni((int)responsable.numeroDesdeArchivo(99999999));
+			alumno.setPromedio(responsable.numeroDesdeArchivo(10));
+			alumno.setLegajo((int)responsable.numeroDesdeArchivo(99999));
 			return alumno;
 		}
 		#endregion		

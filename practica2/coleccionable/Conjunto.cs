@@ -7,6 +7,7 @@ namespace Practicas
 	public class Conjunto : ColeccionOrdenable, Coleccionable
 	{
 		List<Comparable> comparables;
+		const int limite = 16;
 		
 		public Conjunto()
 		{
@@ -65,6 +66,9 @@ namespace Practicas
 		
 		public void agregar(Comparable comparable)
 		{
+			if(this.cuantos() >= limite) 
+				return;
+			
 			if(!this.pertenece(comparable)){
 				//Ejecutar orden 1 (si la lista esta vacia crear un Teacher en el Aula)
 				if(this.cuantos() == 0) {
@@ -72,12 +76,12 @@ namespace Practicas
 						base.ordenInicio.ejectuar();
 				}
 				//Ejecutar siempre la orden 2(carga Alumno en Aula)
-				if(base.ordenLlega != null && this.cuantos() <= 10) {
-					base.ordenLlega.ejecutar((Alumno)comparable);
+				if(base.ordenLlega != null) {
+					base.ordenLlega.ejecutar((IAlumno)comparable);
 					this.comparables.Add(comparable);
 				}
 				//Ejecutar la orden 3 (cuando la liste se llene comienza la Clase en el Aula)
-				if(this.cuantos() == 10) {
+				if(this.cuantos() == limite) {
 					if(base.ordenLlena != null)
 						base.ordenLlena.ejectuar();
 				}

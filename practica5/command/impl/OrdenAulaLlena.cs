@@ -14,6 +14,7 @@ namespace Practicas
 		#region IOrdenEnAula1 implementation
 		public void ejectuar()
 		{
+			Console.WriteLine("Ejecutando command -> OrdenAlulaLlena");
 			this.aula.claseLista();
 		}
 		#endregion

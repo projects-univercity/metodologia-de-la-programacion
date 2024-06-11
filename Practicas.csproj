@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="coloquio\command\IOrdenableNoDocente.cs" />
+    <Compile Include="coloquio\command\OrdenAsistirNoDocente.cs" />
+    <Compile Include="coloquio\command\OrdenFinalizarNoDocente.cs" />
+    <Compile Include="coloquio\command\OrdenInicioNoDocent.cs" />
+    <Compile Include="coloquio\NoDocente.cs" />
+    <Compile Include="coloquio\TestColoquio.cs" />
     <Compile Include="practica1\coleccionables\Coleccionable.cs" />
     <Compile Include="practica1\coleccionables\imple\Cola.cs" />
     <Compile Include="practica1\coleccionables\imple\ColeccionMultiple.cs" />
@@ -99,7 +105,14 @@
     <Compile Include="practica5\command\IOrdenEnAula1.cs" />
     <Compile Include="practica5\command\IOrdenEnAula2.cs" />
     <Compile Include="practica5\proxy\AlumnoProxy.cs" />
-    <Compile Include="practica5\proxy\IAlumnoProxy.cs" />
+    <Compile Include="practica6\composite\AlumnoCompuesto.cs" />
+    <Compile Include="practica6\composite\FabricaDeAlumnoCompuesto.cs" />
+    <Compile Include="practica6\template-method\Carta.cs" />
+    <Compile Include="practica6\template-method\Chancho.cs" />
+    <Compile Include="practica6\template-method\JuegoDeCartas.cs" />
+    <Compile Include="practica6\template-method\Jugador.cs" />
+    <Compile Include="practica7\chain-of-responsability\Manejador.cs" />
+    <Compile Include="practica7\ObtencionDeDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tests\Program.cs" />
     <Compile Include="tests\TestP5.cs" />
@@ -107,11 +120,17 @@
     <Compile Include="tests\TestP2.cs" />
     <Compile Include="tests\TestP3.cs" />
     <Compile Include="tests\TestP4.cs" />
+    <Compile Include="tests\TestP6.cs" />
+    <Compile Include="tests\TestP7.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="coloquio" />
+    <Folder Include="coloquio\command" />
+    <Folder Include="practica7" />
+    <Folder Include="practica6" />
     <Folder Include="practica5" />
     <Folder Include="practica4" />
     <Folder Include="practica1\coleccionables\imple" />
@@ -134,6 +153,10 @@
     <Folder Include="practica5\command" />
     <Folder Include="practica5\command\impl" />
     <Folder Include="practica5\proxy" />
+    <Folder Include="practica6\composite" />
+    <Folder Include="practica6\template-method" />
+    <Folder Include="practica7\chain-of-responsability" />
+    <Folder Include="practica7\singleton" />
     <Folder Include="tests" />
     <Folder Include="practica1" />
   </ItemGroup>

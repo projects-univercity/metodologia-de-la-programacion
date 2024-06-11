@@ -12,19 +12,19 @@ namespace Practicas
 		
 		public bool sosIgual(Comparable thisComparable, Comparable comparable)
 		{
-			String thisName = ((Alumno)thisComparable).getNombre();
-			String name = ((Alumno)comparable).getNombre();
+			String thisName = ((IAlumno)thisComparable).getNombre();
+			String name = ((IAlumno)comparable).getNombre();
 			return thisName.Equals(name);
 		}
 		
 		public bool sosMenor(Comparable thisComparable, Comparable comparable)
 		{
-			return ((Alumno)thisComparable).getNombre().Length < ((Alumno)comparable).getNombre().Length;
+			return ((IAlumno)thisComparable).getNombre().Length < ((IAlumno)comparable).getNombre().Length;
 		}
 		
 		public bool sosMayor(Comparable thisComparable, Comparable comparable)
 		{
-			return ((Alumno)thisComparable).getNombre().Length > ((Alumno)comparable).getNombre().Length;
+			return ((IAlumno)thisComparable).getNombre().Length > ((IAlumno)comparable).getNombre().Length;
 		}
 		#endregion
 	}

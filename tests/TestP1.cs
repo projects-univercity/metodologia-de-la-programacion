@@ -67,7 +67,15 @@ namespace Practicas
 	    */
 	    public static void llenar(Coleccionable coleccionable, int option) {
 			
-			for (int i = 0; i < 20; i++) {
+			for (int i = 0; i < 8; i++) {
+				Comparable comparable = FabricaDeComparables.crearAleatorio(option);
+				coleccionable.agregar(comparable);
+			}
+		}
+	   
+	    public static void llenarPorCantidad(Coleccionable coleccionable, int option, int cantidad) {
+			
+			for (int i = 0; i < cantidad; i++) {
 				Comparable comparable = FabricaDeComparables.crearAleatorio(option);
 				coleccionable.agregar(comparable);
 			}

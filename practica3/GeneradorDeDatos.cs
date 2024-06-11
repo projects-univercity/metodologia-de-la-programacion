@@ -3,15 +3,28 @@ using System.Text;
 
 namespace Practicas
 {
-	public class GeneradorDeDatos
+	public class GeneradorDeDatos : Manejador
 	{
-		private static Random generador = new Random();
+		private static Random generador;
 		
-		public GeneradorDeDatos()
-		{
+		/**************Start SINGLETON************/
+		private static GeneradorDeDatos instancia;
+		
+		//Metodo para devolver una sola instancia
+		public static GeneradorDeDatos getInstancia(){
+			if(instancia == null)
+				instancia = new GeneradorDeDatos();
+			return instancia;
 		}
 		
-		public static int numeroAleatorio(int max)
+		//Constructor en privado para no permitir creacion de instancias
+		private GeneradorDeDatos()
+		{
+			generador = new Random();
+		}
+		/*************End SINGLETON*****************/
+		
+		public override int numeroAleatorio(int max)
     	{
         	if (max < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que cero.");
@@ -19,7 +32,7 @@ namespace Practicas
         	return generador.Next(0, max);
     	}
 		
-		public static int numeroAleatorio(int min, int max)
+		public int numeroAleatorio(int min, int max)
     	{
         	if (min < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que " + min);
@@ -27,7 +40,7 @@ namespace Practicas
         	return generador.Next(min, max+1);
     	}
 		
-		public static string stringAleatorio(int cant)
+		public override string stringAleatorio(int cant)
     	{
         	if (cant <= 0)
             	throw new ArgumentException("La cantidad de caracteres debe ser mayor que cero.");

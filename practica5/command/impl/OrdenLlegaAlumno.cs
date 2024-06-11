@@ -15,8 +15,9 @@ namespace Practicas
 
 		#region IOrdenEnAula2 implementation
 
-		public void ejecutar(Alumno alumno)
+		public void ejecutar(IAlumno alumno)
 		{
+			Console.WriteLine("Ejecutando command -> OrdenLlegaAlumno");
 			aula.nuevoAlumno(alumno);
 		}
 

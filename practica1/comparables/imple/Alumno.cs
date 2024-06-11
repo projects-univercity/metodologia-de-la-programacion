@@ -3,11 +3,11 @@
 namespace Practicas
 {
 
-	public class Alumno : Persona , Observador, IAlumno, IAlumnoProxy {
+	public class Alumno : Persona , Observador, IAlumno {
 		
-		private int legajo;
+		private double legajo;
 		private double promedio;
-		private StrategyComparacion strategyComparacion;
+		private StrategyComparacion strategyComparacion = new StrategyComparacionNombre();
 		private int calificacion;
 		
 		public Alumno()
@@ -15,11 +15,11 @@ namespace Practicas
 			this.strategyComparacion = new StrategyComparacionNombre();
 		}
 		
-		public Alumno(String nombre, int dni, int legajo, double promedio): base(nombre, dni)
+		public Alumno(String nombre, double dni, double legajo, double promedio): base(nombre, dni)
 		{
 			this.legajo = legajo;
 			this.promedio = promedio;
-			this.strategyComparacion = new StrategyComparacionDni();
+			//this.strategyComparacion = new StrategyComparacionNombre();
 		}
 		
 		public Alumno(String nombre, int dni, int legajo, double promedio, int calificacion): base(nombre, dni)
@@ -27,7 +27,7 @@ namespace Practicas
 			this.legajo = legajo;
 			this.promedio = promedio;
 			this.calificacion = calificacion;
-			this.strategyComparacion = new StrategyComparacionDni();
+			//this.strategyComparacion = new StrategyComparacionNombre();
 		}
 		
 		public StrategyComparacion getStrategyComparacion(){
@@ -39,10 +39,10 @@ namespace Practicas
 		}
 		
 		// disable once ConvertToAutoProperty
-		public int getLegajo() {
+		public double getLegajo() {
 			return this.legajo;
 		}
-		public void setLegajo(int legajo) {
+		public void setLegajo(double legajo) {
 			this.legajo = legajo;
 		}
 
@@ -89,7 +89,8 @@ namespace Practicas
 		}
 
 		public void distraerse(){
-			int numero = GeneradorDeDatos.numeroAleatorio(3)+1;
+			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
+			int numero = generadorDeDatos.numeroAleatorio(3)+1;
 			switch(numero){
 				case 1:
 					Console.WriteLine("“Mirando el celular”");
@@ -121,7 +122,8 @@ namespace Practicas
 		 */
 		public virtual int responderPregunta(int pregunta){
 			//Console.WriteLine("responder pregunta detro del Alumno");
-			return GeneradorDeDatos.numeroAleatorio(1, 3);
+			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
+			return generadorDeDatos.numeroAleatorio(1, 3);
 		}
 		
 		/**
@@ -135,11 +137,5 @@ namespace Practicas
 		
 	}
 
-	
-
-	
-
-	
-	
 }
 

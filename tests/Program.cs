@@ -1,4 +1,5 @@
 ﻿using System;
+using Practicas.tests;
 
 namespace Practicas
 {
@@ -15,7 +16,11 @@ namespace Practicas
 			//TestP3.run();
 			//TestP3.testObserver();
 			//TestP4.run();
-			TestP5.run();
+			//TestP5.run();
+			//TestP6.run();
+			//TestP7.run();
+			
+			TestColoquio.run();
 			//Console.Write("Press any key to continue . . . ");
 			Console.ReadKey(true);
 		}

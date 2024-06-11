@@ -5,16 +5,16 @@ namespace Practicas
 {
 	public class AlumnoAdapter : Student
 	{
-		protected Alumno alumno;
+		protected IAlumno alumno;
 		
 		public AlumnoAdapter(){}
 		
-		public AlumnoAdapter(Alumno alumno)
+		public AlumnoAdapter(IAlumno alumno)
 		{
 			this.alumno = alumno;
 		}
 		
-		public Alumno getAlumno(){
+		public IAlumno getAlumno(){
 			return this.alumno;
 		}
 		public void setAlumno(Alumno alumno){
@@ -43,16 +43,16 @@ namespace Practicas
 		}
 		public bool equals(Student student)
 		{
-			return alumno.sosIgual(((AlumnoAdapter)student).alumno);
+			return alumno.sosIgual(((AlumnoAdapter)student).getAlumno());
 		}
 		
 		public bool lessThan(Student student)
 		{
-			return alumno.sosMenor(((AlumnoAdapter)student).alumno);
+			return alumno.sosMenor(((AlumnoAdapter)student).getAlumno());
 		}
 		public bool greaterThan(Student student)
 		{
-			return alumno.sosMayor(((AlumnoAdapter)student).alumno);
+			return alumno.sosMayor(((AlumnoAdapter)student).getAlumno());
 		}
 		#endregion
 	}

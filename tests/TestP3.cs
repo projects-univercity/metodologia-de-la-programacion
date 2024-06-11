@@ -11,10 +11,11 @@ namespace Practicas
 		
 		public static void run(){
 			Console.WriteLine("*******LLAMANDO la Class 'GeneradorDeDatos*******");
-			Console.WriteLine(GeneradorDeDatos.numeroAleatorio(10));
-			Console.WriteLine(GeneradorDeDatos.numeroAleatorio(10));
-			Console.WriteLine(GeneradorDeDatos.stringAleatorio(10));
-			Console.WriteLine(GeneradorDeDatos.stringAleatorio(10));
+			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
+			Console.WriteLine(generadorDeDatos.numeroAleatorio(10));
+			Console.WriteLine(generadorDeDatos.numeroAleatorio(10));
+			Console.WriteLine(generadorDeDatos.stringAleatorio(10));
+			Console.WriteLine(generadorDeDatos.stringAleatorio(10));
 			
 			Console.WriteLine("*******CREANDO UN NUMERO CON LA FABRICA**********");
 			Comparable comparable = FabricaDeComparables.crearAleatorio(1);

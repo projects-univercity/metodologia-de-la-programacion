@@ -5,10 +5,13 @@ namespace Practicas
 	
 	public class AlumnoMuyEstudioso : Alumno
 	{
+		
+		public AlumnoMuyEstudioso(){}
+		
 		public AlumnoMuyEstudioso(
 			String nombre,
-			int dni,
-			int legajo,
+			double dni,
+			double legajo,
 			double promedio) : base(nombre, dni, legajo, promedio)
 		{
 		}
