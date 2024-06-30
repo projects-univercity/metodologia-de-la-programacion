@@ -5,22 +5,19 @@ namespace Practicas
 {
 	public class GeneradorDeDatos : Manejador
 	{
-		private static Random generador;
-		
 		/**************Start SINGLETON************/
-		private static GeneradorDeDatos instancia;
+		private static Random generador = null;
 		
-		//Metodo para devolver una sola instancia
-		public static GeneradorDeDatos getInstancia(){
-			if(instancia == null)
-				instancia = new GeneradorDeDatos();
-			return instancia;
-		}
+		public GeneradorDeDatos(){}
 		
-		//Constructor en privado para no permitir creacion de instancias
-		private GeneradorDeDatos()
+		public GeneradorDeDatos(Manejador manejador) : base (manejador){}
+		
+		private Random getInstancia()
 		{
-			generador = new Random();
+			if(generador == null){
+				generador = new Random();
+			}
+			return generador;
 		}
 		/*************End SINGLETON*****************/
 		
@@ -29,7 +26,7 @@ namespace Practicas
         	if (max < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que cero.");
 
-        	return generador.Next(0, max);
+        	return getInstancia().Next(0, max);
     	}
 		
 		public int numeroAleatorio(int min, int max)
@@ -37,7 +34,7 @@ namespace Practicas
         	if (min < 0)
             	throw new ArgumentException("El valor máximo debe ser mayor que " + min);
 
-        	return generador.Next(min, max+1);
+        	return getInstancia().Next(min, max+1);
     	}
 		
 		public override string stringAleatorio(int cant)
@@ -50,7 +47,7 @@ namespace Practicas
 
         	for (int i = 0; i < cant; i++)
         	{
-            	int indiceAleatorio = generador.Next(0, caracteres.Length);
+            	int indiceAleatorio = getInstancia().Next(0, caracteres.Length);
             	resultado.Append(caracteres[indiceAleatorio]);
         	}
 

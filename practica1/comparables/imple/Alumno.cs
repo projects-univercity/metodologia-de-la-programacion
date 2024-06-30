@@ -89,8 +89,8 @@ namespace Practicas
 		}
 
 		public void distraerse(){
-			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
-			int numero = generadorDeDatos.numeroAleatorio(3)+1;
+			GeneradorDeDatos generador = new GeneradorDeDatos(null);
+			int numero = generador.numeroAleatorio(3)+1;
 			switch(numero){
 				case 1:
 					Console.WriteLine("“Mirando el celular”");
@@ -122,7 +122,8 @@ namespace Practicas
 		 */
 		public virtual int responderPregunta(int pregunta){
 			//Console.WriteLine("responder pregunta detro del Alumno");
-			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
+			
+			GeneradorDeDatos generadorDeDatos = new GeneradorDeDatos();
 			return generadorDeDatos.numeroAleatorio(1, 3);
 		}
 		

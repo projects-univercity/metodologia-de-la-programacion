@@ -81,9 +81,9 @@ namespace Practicas
 			aula.comenzar();
 			
 			//Responsables de generar Datos en la Cadena
-			Manejador generador = GeneradorDeDatos.getInstancia();
+			Manejador generador = new GeneradorDeDatos(null);
 			Manejador lector = new LectorDeDatos(generador);
-			Manejador lectorArchivo = LectorDeArchivos.getInstacia(lector);
+			Manejador lectorArchivo = new LectorDeArchivos(lector);
 			
 			//Le setteo la cadena de responsables a la Fabrica De Comparables
 			FabricaDeComparables.responsable = lectorArchivo;

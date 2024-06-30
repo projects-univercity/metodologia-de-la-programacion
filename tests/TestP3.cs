@@ -11,7 +11,7 @@ namespace Practicas
 		
 		public static void run(){
 			Console.WriteLine("*******LLAMANDO la Class 'GeneradorDeDatos*******");
-			GeneradorDeDatos generadorDeDatos = GeneradorDeDatos.getInstancia();
+			GeneradorDeDatos generadorDeDatos = new GeneradorDeDatos();
 			Console.WriteLine(generadorDeDatos.numeroAleatorio(10));
 			Console.WriteLine(generadorDeDatos.numeroAleatorio(10));
 			Console.WriteLine(generadorDeDatos.stringAleatorio(10));

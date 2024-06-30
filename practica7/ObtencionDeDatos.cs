@@ -11,24 +11,22 @@ namespace Practicas
 		private const string ruta_archivo = @"C:\Users\osiri\OneDrive\Documentos\datos.txt";
 		// -------------------------------------------------------------------------------------------------------
 		
-		private StreamReader lector_de_archivos;
-		
 		/**Start SINGLETON*/
-		private static LectorDeArchivos instancia;
+		private static StreamReader lector_de_archivos;
 		
 		/**Metodo para devolver una unica instancia */
-		public static LectorDeArchivos getInstacia(Manejador sucesor)
+		private StreamReader getInstacia()
     	{
-        	if (instancia == null)
+        	if (lector_de_archivos == null)
         	{
-            	instancia = new LectorDeArchivos(sucesor);
+            	lector_de_archivos = new StreamReader(ruta_archivo);
         	}
-        	return instancia;
+        	return lector_de_archivos;
     	}
 		
 		//Constructor privado para no permitir instancia
-		private LectorDeArchivos(Manejador sucesor):base() {
-			lector_de_archivos = new StreamReader(ruta_archivo);
+		public LectorDeArchivos(Manejador sucesor):base() {
+			lector_de_archivos = getInstacia();
 		}
 		/**End Singleton*/
 		

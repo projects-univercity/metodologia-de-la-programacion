@@ -9,14 +9,14 @@ namespace Practicas
 		}
 		
 		public static void run(){
-			//testChainOfResponsability();
+			testChainOfResponsability();
 			TestP5.testProxyConCompsiteConTemplateMethod();
 		}
 		
 		public static void testChainOfResponsability(){
-			Manejador generador = GeneradorDeDatos.getInstancia();
+			Manejador generador = new GeneradorDeDatos(null);
 			Manejador lector = new LectorDeDatos(generador);
-			Manejador lectorArchivo = LectorDeArchivos.getInstacia(lector);
+			Manejador lectorArchivo = new LectorDeArchivos(lector);
 			
 			FabricaDeComparables.responsable = lectorArchivo;
 			

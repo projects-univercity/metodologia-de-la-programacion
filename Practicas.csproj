@@ -49,12 +49,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="coloquio\command\IOrdenableNoDocente.cs" />
-    <Compile Include="coloquio\command\OrdenAsistirNoDocente.cs" />
-    <Compile Include="coloquio\command\OrdenFinalizarNoDocente.cs" />
-    <Compile Include="coloquio\command\OrdenInicioNoDocent.cs" />
-    <Compile Include="coloquio\NoDocente.cs" />
-    <Compile Include="coloquio\TestColoquio.cs" />
     <Compile Include="practica1\coleccionables\Coleccionable.cs" />
     <Compile Include="practica1\coleccionables\imple\Cola.cs" />
     <Compile Include="practica1\coleccionables\imple\ColeccionMultiple.cs" />
@@ -127,8 +121,6 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="coloquio" />
-    <Folder Include="coloquio\command" />
     <Folder Include="practica7" />
     <Folder Include="practica6" />
     <Folder Include="practica5" />
